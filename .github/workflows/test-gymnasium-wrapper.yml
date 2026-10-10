@@ -2,27 +2,7 @@ name: Test Gymnasium wrapper
 
 on:
   push:
-    paths:
-      - '.github/workflows/test-gymnasium-wrapper.yml'
-      - 'gymnasium_wrapper/**'
-      - 'include/**'
-      - 'src/**'
-      - 'tests/test_gymnasium_wrapper.py'
-      - 'CMakeLists.txt'
-      - 'setup.py'
-      - 'pyproject.toml'
-    branches: [main]
-  pull_request:
-    paths:
-      - '.github/workflows/test-gymnasium-wrapper.yml'
-      - 'gymnasium_wrapper/**'
-      - 'include/**'
-      - 'src/**'
-      - 'tests/test_gymnasium_wrapper.py'
-      - 'CMakeLists.txt'
-      - 'setup.py'
-      - 'pyproject.toml'
-    branches: [main]
+    branches: [ci/main-audit-5f76cc8]
 
 permissions:
   contents: read
@@ -34,6 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v7
       with:
+        ref: 5f76cc88b2ef5f0670501788efe3ad9aadf2e291
         submodules: recursive
 
     - name: Install dependencies on Ubuntu
